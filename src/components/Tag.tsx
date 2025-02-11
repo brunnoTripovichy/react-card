@@ -4,9 +4,9 @@ export interface TagProps {
 
 const Tag: React.FC<TagProps> = ({ tag }) => {
   return (
-    <div className="flex rounded-sm px-2 bg-blue-500">
-      <span className="text-sm">{tag}</span>
-    </div>
+    <span className="px-2 py-1 text-sm text-white bg-blue-400 rounded-md">
+      {tag}
+    </span>
   );
 };
 

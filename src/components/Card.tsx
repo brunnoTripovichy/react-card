@@ -9,29 +9,17 @@ export interface CardProps {
 
 const Card: React.FC<CardProps> = ({ title, content, image, tags }) => {
   return (
-    <div className="flex flex-col rounded-sm border-2 shadow-md">
-      <div className="flex">
-        <img
-          className="object-contain md:object-cover"
-          src={image}
-          alt="image"
-        />
-      </div>
-      <div className="flex flex-col gap-4 p-8">
-        <div className="flex justify-between">
-          <h2 className="text-xl font-semibold">{title}</h2>
-        </div>
-
-        <div className="flex">
-          <p className="text-ellipsis md:text-clip">{content}</p>
-        </div>
-
-        <div className="flex">
-          <div className="flex flex-wrap gap-2">
-            {tags.map((tag, index) => (
-              <Tag key={index} tag={tag} />
-            ))}
-          </div>
+    <div className="flex flex-col rounded-sm border-2 shadow-md overflow-hidden">
+      {image && (
+        <img className="w-full h-48 object-cover" src={image} alt={title} />
+      )}
+      <div className="p-6 space-y-4">
+        <h2 className="text-xl font-semibold">{title}</h2>
+        {content && <p className="text-gray-600">{content}</p>}
+        <div className="flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <Tag key={tag} tag={tag} />
+          ))}
         </div>
       </div>
     </div>
