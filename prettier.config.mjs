@@ -12,6 +12,7 @@ const config = {
   trailingComma: 'all',
   bracketSpacing: true,
   arrowParens: 'always',
+  endOfLine: 'auto',
 };
 
 export default config;
